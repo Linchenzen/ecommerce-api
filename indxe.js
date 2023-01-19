@@ -1,8 +1,20 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const userRoute = require("./routes/user")
 
+dotenv.config();
 
-app.listen(8080, () => {
+mongoose
+    .connect(process.env.MONGO_URL)
+    .then(() => console.log("DBConnection Successfull!"))
+    .catch((err) => {
+        console.log(err);
+    });
+
+app.use('/api/user', userRoute)
+
+app.listen(process.env.Port || 8080, () => {
     console.log("Backend server is running! ");
 });
