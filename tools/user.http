@@ -32,3 +32,10 @@ Content-Type: application/json
 {{auth}}
 
 {}
+
+###
+GET {{ host }}/api/users/stats
+Content-Type: application/json
+{{auth}}
+
+{}
