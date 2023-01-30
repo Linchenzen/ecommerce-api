@@ -5,6 +5,7 @@ const { verifyTokne, verifyTokenAndAuthorization, verifyTokenAndAdmin } = requir
 
 const router = require("express").Router();
 
+//UPDATE
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(
@@ -14,14 +15,14 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
     }
 
     try {
-        const updateUser = await User.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
             req.params.id,
             {
                 $set: req.body
             },
             { new: true }
         );
-        res.status(200).json(updateUser);
+        res.status(200).json(updatedUser);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -48,7 +49,7 @@ router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
     }
 });
 
-//GET ALL USER
+//GET ALL USERS
 router.get("/", verifyTokenAndAdmin, async (req, res) => {
     const query = req.query.new;
     try {

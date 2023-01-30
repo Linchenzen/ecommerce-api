@@ -13,38 +13,37 @@ Content-Type: application/json
 }
 
 ###
-GET {{ host }}/api/users
-Content-Type: application/json
-{{auth}}
-
-{}
-
-###
-GET {{ host }}/api/users/find/63cbfe8cfc7015515f49b02d
-Content-Type: application/json
-{{auth}}
-
-{}
-
-###
-PUT  {{ host }}/api/users/63cbfe8cfc7015515f49b02d
+POST  {{ host }}/api/products
 Content-Type: application/json
 {{auth}}
 
 {
-    "username": "kenny",
-    "email": "kenny19990428@gmail.com"
+     "title": "TEST1 SHOES",
+     "desc": "This is a test product",
+     "img": "Test mig",
+     "categories":["shoes","girls"],
+     "size": "22.5",
+     "color": "black",
+     "price": 599
 }
 
 ###
-DELETE  {{ host }}/api/users/63d775f58eda5924b5e2ceb9
+DELETE  {{ host }}/api/products/63d7763029a4fbf5645776f3
+Content-Type: application/json
+{{auth}}
+
+{}
+
+
+###
+GET  {{ host }}/api/products?category=kid
 Content-Type: application/json
 {{auth}}
 
 {}
 
 ###
-GET {{ host }}/api/users/stats
+GET  {{ host }}/api/products/find/63d767b74c017cf9aec8cf07
 Content-Type: application/json
 {{auth}}
 
