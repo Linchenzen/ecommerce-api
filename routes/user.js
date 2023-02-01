@@ -1,6 +1,12 @@
 const { json } = require("express");
 const User = require("../models/User");
-const { verifyTokne, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
+
+const {
+    verifyToken,
+    verifyTokenAndAuthorization,
+    verifyTokenAndAdmin,
+} = require("./verifyToken");
+
 
 
 const router = require("express").Router();

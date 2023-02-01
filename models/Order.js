@@ -14,7 +14,7 @@ const OrderSchema = new mongoose.Schema(
                 }
             }
         ],
-        amouny: { type: Number, require: true },
+        amount: { type: Number, require: true },
         address: { type: Object, require: true },
         status: { type: String, default: "pending" },
     },

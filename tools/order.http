@@ -1,0 +1,105 @@
+@host = http://localhost:8080
+@auth = token: Bearer {{ login.response.body.$.accessToken }}
+
+
+###
+# @name login
+POST {{ host }}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+###
+POST  {{ host }}/api/orders
+Content-Type: application/json
+{{auth}}
+
+{
+     "userId": "63cbfd677d9993cb5cad9c94",
+     "products": [
+        {
+            "productId": "p0000999",
+            "quantity": 1
+        },
+        {
+            "productId": "p0000998",
+            "quantity": 2
+        }
+     ],
+     "amount": 7777 ,
+     "address": "ccc"
+}
+
+###
+POST  {{ host }}/api/orders
+Content-Type: application/json
+{{auth}}
+
+{
+     "userId": "63cbfd677d9993cb5cad9c94",
+     "products": [
+        {
+            "productId": "p0000999",
+            "quantity": 1
+        },
+        {
+            "productId": "p0000998",
+            "quantity": 2
+        }
+     ],
+     "amount": 7777 ,
+     "address": "ccc"
+}
+
+###
+PUT  {{ host }}/api/orders/63d9fdcca0dd5da4ca40c2a2
+Content-Type: application/json
+{{auth}}
+
+{
+     "userId": "63cbfe8cfc7015515f49b02d",
+     "products": [
+        {
+            "productId": "p00001",
+            "quantity": 1
+        },
+        {
+            "productId": "p00002",
+            "quantity": 2
+        }
+     ],
+     "amount": 1697 ,
+     "address": "New Taipei"
+}
+
+###
+DELETE  {{ host }}/api/orders/63d9fdcca0dd5da4ca40c2a2
+Content-Type: application/json
+{{auth}}
+
+{}
+
+
+###
+GET  {{ host }}/api/orders
+Content-Type: application/json
+{{auth}}
+
+{}
+
+###
+GET  {{ host }}/api/orders/find/63cbfe8cfc7015515f49b02d
+Content-Type: application/json
+{{auth}}
+
+{}
+
+###
+GET  {{ host }}/api/orders/income
+Content-Type: application/json
+{{auth}}
+
+{}
