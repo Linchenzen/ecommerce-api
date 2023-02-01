@@ -1,0 +1,74 @@
+@host = http://localhost:8080
+@auth = token: Bearer {{ login.response.body.$.accessToken }}
+
+
+###
+# @name login
+POST {{ host }}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+###
+POST  {{ host }}/api/carts
+Content-Type: application/json
+{{auth}}
+
+{
+     "userId": "63cbfd677d9993cb5cad9c94",
+     "products": [
+        {
+            "productId": "p00003",
+            "quantity": 2
+        },
+        {
+            "productId": "p00004",
+            "quantity": 1
+        }
+     ]
+}
+
+###
+PUT  {{ host }}/api/carts/63da001183d963b35077cef5
+Content-Type: application/json
+{{auth}}
+
+{
+     "userId": "63cbfe8cfc7015515f49b02d",
+     "products": [
+        {
+            "productId": "p00001",
+            "quantity": 1
+        },
+        {
+            "productId": "p00002",
+            "quantity": 2
+        }
+     ]
+}
+
+###
+DELETE  {{ host }}/api/carts/63da0022cadb84622975e21f
+Content-Type: application/json
+{{auth}}
+
+{}
+
+
+###
+GET  {{ host }}/api/carts
+Content-Type: application/json
+{{auth}}
+
+{}
+
+###
+GET  {{ host }}/api/carts/find/63cbfe8cfc7015515f49b02d
+Content-Type: application/json
+{{auth}}
+
+{}
+

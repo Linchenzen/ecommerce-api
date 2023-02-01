@@ -18,17 +18,17 @@ Content-Type: application/json
 {{auth}}
 
 {
-     "title": "TEST1 SHOES",
+     "title": "TEST2 SHOES",
      "desc": "This is a test product",
      "img": "Test mig",
-     "categories":["shoes","girls"],
+     "categories":["kid","girls"],
      "size": "22.5",
      "color": "black",
      "price": 599
 }
 
 ###
-DELETE  {{ host }}/api/products/63d7763029a4fbf5645776f3
+DELETE  {{ host }}/api/products/63d9cff6a903a172c0d08de4
 Content-Type: application/json
 {{auth}}
 
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 
 ###
-GET  {{ host }}/api/products?category=kid
+GET  {{ host }}/api/products
 Content-Type: application/json
 {{auth}}
 

@@ -1,6 +1,12 @@
 const { json } = require("express");
 const Product = require("../models/Product");
-const { verifyTokne, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
+
+const {
+    verifyToken,
+    verifyTokenAndAuthorization,
+    verifyTokenAndAdmin,
+} = require("./verifyToken");
+
 
 
 const router = require("express").Router();
@@ -39,7 +45,7 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
 //DELETE
 router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
     try {
-        const product = await Product.findByIdAndRemove(req.params.id);
+        await Product.findByIdAndRemove(req.params.id);
         res.status(200).json("Product has been deleted...");
     } catch (err) {
         res.status(500).json(err);
@@ -73,7 +79,7 @@ router.get("/", async (req, res) => {
 
                 },
             });
-        }else{
+        } else {
             products = await Product.find();
         }
 
