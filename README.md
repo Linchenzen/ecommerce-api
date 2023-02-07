@@ -33,20 +33,6 @@ M2KDevelopments wants to merge 1 commit into safak:mern-ecommerce-app from M2KDe
  Files changed 1
  Open
 Create README.md
-#75
-File filter 
- 
-0 / 1 files viewed
- 79  
-README.md
-Marking files as viewed can help keep track of your progress, but will not affect your submitted reviewViewed
-@@ -0,0 +1,79 @@
-# MERN ECommerce APP
-An open source project for an Ecommerce website.
-
-## Youtube Video
-<a href="https://www.youtube.com/watch?v=y66RgYMAgSo">Youtube Tutorial</a>
-
 
 ## Instructions
 <ul>
