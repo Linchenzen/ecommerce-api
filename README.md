@@ -1,38 +1,6 @@
 # ecommerce-api
 
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@Linchenzen 
-safak
-/
-youtube
-Public
-Fork your own copy of safak/youtube
-Code
-Issues
-56
-Pull requests
-31
-Actions
-Projects
-Security
-Insights
-Create README.md #75
- Open
-M2KDevelopments wants to merge 1 commit into safak:mern-ecommerce-app from M2KDevelopments:patch-1
-+79 −0 
- Conversation 0
- Commits 1
- Checks 1
- Files changed 1
- Open
-Create README.md
+
 
 ## Instructions
 <ul>
