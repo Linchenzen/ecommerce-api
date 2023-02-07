@@ -70,22 +70,3 @@ JWT_SEC=AnywaySecretValue
 ```
 MONGO_URL=mongodb+srv://[user]:[password]@[clustername].[example].mongodb.net/[databasename]?retryWrites=true&w=majority
 ```
-
-
-### Backend Base URL
-<h6>To change the backend base url you'll find it in the <a href="./client/src/requestMethods.js">requestMethods.js</a> file</h6>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Create README.md by M2KDevelopments · Pull Request #75 · safak/youtube 
