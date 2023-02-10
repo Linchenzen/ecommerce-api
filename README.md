@@ -1,5 +1,5 @@
 # ecommerce-api
-
+This is a simple e-commerce api with node.js and mongo db
 
 
 ## Instructions
